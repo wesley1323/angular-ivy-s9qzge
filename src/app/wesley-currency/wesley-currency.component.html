@@ -1,0 +1,37 @@
+<div class="container">
+<div class="row">
+  <div class="col">
+    <h1 class="h4 text-right text-secondary">Cotação do momento</h1><br>
+
+    <div>
+      <table class="table table-hover">
+        <thead>
+          
+          <th>Dólar US$</th>
+          <th>Euro €</th>
+          <th>Bitcoin ₿</th>
+          
+        </thead>
+        <tbody>
+          <tr *ngFor="let rate of this.wallet.bitCoinRatesUSD; index as i">
+            <td>
+              {{
+                (rate.bpi.BRL.rate_float / rate.bpi.USD.rate_float).toFixed(3)
+              }}
+            </td>
+            <td>
+              {{
+                (
+                  rate.bpi.BRL.rate_float /
+                  this.wallet.bitCoinRatesEUR[i].bpi.EUR.rate_float
+                ).toFixed(3)
+              }}
+            </td>
+            <td>{{ rate.bpi.BRL.rate_float.toFixed(3) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

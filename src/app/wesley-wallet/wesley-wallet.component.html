@@ -1,0 +1,43 @@
+<div class="container">
+<div class="row">
+  <div class="col">
+    <h1 class="h3 text-right">CARTEIRA BITCOIN</h1>
+
+    <div class="alert">
+      Saldo de bitcoins:
+      <p>{{ this.wallet.getSaldo() }} Bitcoins no momento</p>
+      
+        <p>$ {{ this.wallet.getDolar() }} Dólares</p> 
+        <p>€ {{ this.wallet.getEuro() }} Euros</p>
+        <p>R$ {{ this.wallet.getReal() }} Reais</p> 
+        
+      
+    </div>
+
+    <div>
+      <div class="card-body">
+        <div class="grid1">
+          <label class="form-label">Insira abaixo o valor que deseja INSERIR ou RETIRAR de sua carteira Bitcoin<input class="form-control m-1" type="number" #valor min="0" />
+        </label>
+        </div>
+
+        <div class="d-grid col-8">
+          
+          <button
+            class="btn1 text-success"
+            (click)="depositar(valor.value); valor.value = ''"
+          >
+            INSERIR
+          </button>
+          <button
+            class="btn2 text-danger"
+            (click)="sacar(valor.value); valor.value = ''"
+          >
+            RETIRAR
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
